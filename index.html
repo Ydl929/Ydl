@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的網頁</title>
+    <!-- 引入 Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">我的網頁</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">個人資料</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">我的作品</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">我的筆記</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 網頁左方的顯示按鈕 -->
+            <div class="col-md-2">
+                <button class="btn btn-primary btn-block">按鈕1</button>
+                <button class="btn btn-primary btn-block">按鈕2</button>
+                <button class="btn btn-primary btn-block">按鈕3</button>
+                <button class="btn btn-primary btn-block">按鈕4</button>
+                <button class="btn btn-primary btn-block">按鈕5</button>
+            </div>
+            
+            <!-- 顯示圖片的區域 -->
+            <div class="col-md-5">
+                <!-- 這裡可以放您的圖片 -->
+            </div>
+
+            <!-- 網頁右方的嵌入YouTube影片區域 -->
+            <div class="col-md-5">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/sj7_cHqLt4Q?si=X1wedpwVArvTuOUj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- 網頁中下方的電子時鐘和日期 -->
+    <div class="container text-center mt-4">
+        <div id="clock"></div>
+        <h3>2023年10月03日</h3>
+    </div>
+
+    <!-- 引入 Bootstrap JS 和 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript代碼用於顯示電子時鐘 -->
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = timeString;
+            setTimeout(updateClock, 1000);
+        }
+        updateClock();
+    </script>
+</body>
+</html>
